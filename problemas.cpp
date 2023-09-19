@@ -9,19 +9,16 @@ void problema2(){
 
     srand(time(NULL));
 
-    int num = 65+ rand() %(90-65);
-    char letra = num;
-    cout << letra << endl;
-    cout << num << endl;
-    char cadenaLetras[10] ={};
+    char cadenaLetras[11] ={};
+    char abecedario[26]={A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z};
     char *punteroLetras = cadenaLetras;
 
     for(int i=0;i<sizeof(cadenaLetras);i++){
         int num2 =65+ rand() %(91-65);
         *(punteroLetras+i) = char(num2) ;
-        cout << num2<<" ";
-    }
 
+    }
+    cadenaLetras[sizeof(cadenaLetras)-1]='\0';
     cout<<endl;
     cout << cadenaLetras <<endl;
 
