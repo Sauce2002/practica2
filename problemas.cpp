@@ -8,11 +8,6 @@ using namespace std;
 void problema2(){
 
     srand(time(NULL));
-
-    int num = 65+ rand() %(90-65);
-    char letra = num;
-    cout << letra << endl;
-    cout << num << endl;
     char cadenaLetras[10] ={};
     char *punteroLetras = cadenaLetras;
 
@@ -24,8 +19,6 @@ void problema2(){
 
     cout<<endl;
     cout << cadenaLetras <<endl;
-
-
 
 
 }
