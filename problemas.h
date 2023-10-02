@@ -7,4 +7,5 @@ void problema6();
 void problema8();
 void problema10();
 void problema12();
+void problema14();
 #endif // PROBLEMAS_H
