@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <ctime>
 #include <array>
+//#include <string>
 using namespace std;
 
 void problema2(){
@@ -72,3 +73,19 @@ void problema4(){
 
 }
 
+void problema6(){
+    string cadena;
+    cout << "Ingrese una cadena de caracteres: ";
+    cin>>cadena;
+    cout << "Original: " << cadena << endl;
+    for (int i = 0; i < cadena.length(); ++i) {
+        if (islower(cadena[i])) {
+            cadena[i] = toupper(cadena[i]);
+        }
+    }
+
+
+
+    cout << "En mayuscula: " << cadena << endl;
+
+}

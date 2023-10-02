@@ -3,5 +3,5 @@
 
 void problema2();
 void problema4();
-
+void problema6();
 #endif // PROBLEMAS_H
