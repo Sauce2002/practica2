@@ -24,10 +24,10 @@ void problema6(){
   
   // Recorrer la cadena y convertir las letras minúsculas a mayúsculas
   for (int i = 0; i < cadena.length(); ++i) {
-    if (isLowerCase(cadena.charAt(i))) {
-      cadena.setCharAt(i, toUpperCase(cadena.charAt(i)));
+        if (islower(cadena[i])) {
+            cadena[i] = toupper(cadena[i]);
+        }
     }
-  }
   
   Serial.print("En mayúscula: ");
   Serial.println(cadena);
