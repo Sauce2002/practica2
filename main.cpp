@@ -5,6 +5,6 @@ using namespace std;
 int main()
 {
     cout << "Hello World!" << endl;
-    problema2();
+    problema4();
     return 0;
 }
