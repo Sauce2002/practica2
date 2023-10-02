@@ -33,7 +33,7 @@ int main()
         problema14();
         break;
     case 16:
-//        problema16();
+        problema16();
         break;
     case 18:
 //        problema18();

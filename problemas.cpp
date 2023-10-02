@@ -11,6 +11,7 @@ bool esCuadradoMagico(int** matriz, int n);
 void imprimirMatriz(int** matriz,int n);
 void llenarMatriz(int** matriz,int n);
 void rotarMatriz(int** matriz, int n);
+void calcularCaminos(int fila,int columna,int n,int *total);
 
 void problema2(){
 
@@ -280,10 +281,12 @@ void llenarMatriz(int** matriz,int n) {
 
     for (int fila = 0; fila < n; ++fila) {
         for (int columna = 0; columna < n; ++columna) {
+//            matriz[fila][columna]= valor++;
             *(*(matriz+columna)+fila) = valor++;
         }
     }
 }
+
 void rotarMatriz(int** matriz, int n) {
     int temp[n][n];
 
@@ -293,18 +296,24 @@ void rotarMatriz(int** matriz, int n) {
             temp[fila][columna] =*(*(matriz+columna)+(n-1-fila));
         }
     }
-
-    for(int x=0;x<n;x++){
-        for(int z=0; z<n;z++){
-            cout << *(*(temp+z)+x)<<" ";
-        }
-        cout<<endl;
-    }
-    cout<<endl;
-
     for (int fila = 0; fila < n; ++fila) {
         for (int columna = 0; columna < n; ++columna) {
             *(*(matriz+columna)+fila) = *(*(temp+columna)+fila);
         }
     }
+}
+
+void calcularCaminos(int fila,int columna,int n,int *total) {
+    if(columna+1<n)calcularCaminos(fila,columna+1,n,total);
+    if(fila+1<n)calcularCaminos(fila+1,columna,n,total);
+    if(fila == columna && fila == n-1) *total = *total+1;
+}
+
+void problema16(){
+    int n;
+    int total=0;
+    cout<<"ingrese el tamanio de la matriz cuadrada: "<<endl;
+    cin>>n;
+    calcularCaminos(0,0,n+1,&total);
+    cout<<"el total de caminos es: "<<total<<endl;
 }
