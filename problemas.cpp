@@ -5,6 +5,11 @@
 #include <array>
 //#include <string>
 using namespace std;
+int valorRomano(char c);
+int convertirRomanoAArabigo(string numeroRomano);
+bool esCuadradoMagico(int** matriz, int n);
+void imprimirMatriz(int** matriz,int n);
+
 
 void problema2(){
 
@@ -109,4 +114,128 @@ void problema8(){
     cout << "Original: " << cadena << endl;
     cout << "Texto: " << texto << endl;
     cout << "Numero: " << numero << endl;
+}
+
+int valorRomano(char c) {
+    switch (c) {
+    case 'M':
+        return 1000;
+    case 'D':
+        return 500;
+    case 'C':
+        return 100;
+    case 'L':
+        return 50;
+    case 'X':
+        return 10;
+    case 'V':
+        return 5;
+    case 'I':
+        return 1;
+    default:
+        return 0;
+    }
+}
+
+int convertirRomanoAArabigo(string numeroRomano) {
+    int resultado = 0;
+    int prevValor = 0;
+
+    for (int i = numeroRomano.length() - 1; i >= 0; i--) {
+        int valor = valorRomano(numeroRomano[i]);
+
+        if (valor < prevValor) {
+            resultado -= valor;
+        } else {
+            resultado += valor;
+        }
+
+        prevValor = valor;
+    }
+
+    return resultado;
+}
+
+void problema10(){
+    string numeroRomano;
+    cout << "Ingrese un número romano: ";
+            cin >> numeroRomano;
+
+    int numeroArabigo = convertirRomanoAArabigo(numeroRomano);
+
+    cout << "El número ingresado fue: " << numeroRomano << endl;
+            cout << "Que corresponde a: " << numeroArabigo << endl;
+
+}
+
+void problema12(){
+
+    int n;
+    cout << "Ingrese el tamaño de la matriz cuadrada: ";
+    cin >> n;
+        int **pMatriz;
+        pMatriz = new int* [n];
+        for (int i = 0; i <n; i++) {
+            pMatriz[i] = new int[n];
+        }
+        cout << "Ingrese los elementos de la matriz:" << endl;
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
+            cin >> *(*(pMatriz+j)+i);
+            }
+        }
+        imprimirMatriz(pMatriz,n);
+        if (esCuadradoMagico(pMatriz, n)) {
+            cout << "La matriz es un cuadrado magico." << endl;
+        } else {
+            cout << "La matriz no es un cuadrado magico." << endl;
+        }
+        for (int i = 0; i < n; i++) {
+            delete[] pMatriz[i];
+        }
+        delete[] pMatriz;
+        pMatriz = nullptr;
+}
+bool esCuadradoMagico(int** matriz, int n) {
+    int sumaDiagonal1 = 0;
+    int sumaDiagonal2 = 0;
+
+    for (int i = 0; i < n; ++i) {
+        sumaDiagonal1 += *(*(matriz+i)+i);
+    }
+
+    for (int i = 0; i < n; ++i) {
+        //sumaDiagonal2 += matriz[i][n - 1 - i];
+        sumaDiagonal2 += *(*(matriz+(n-1-i))+i);
+    }
+
+    if (sumaDiagonal1 != sumaDiagonal2) {
+        return false;
+    }
+
+    for (int i = 0; i < n; ++i) {
+        int sumaFila = 0;
+        int sumaColumna = 0;
+        for (int j = 0; j < n; ++j) {
+            //sumaFila += matriz[i][j];
+            sumaFila +=*(*(matriz+j)+i);
+            //sumaColumna += matriz[j][i];
+            sumaColumna += *(*(matriz+i)+j);
+        }
+
+        if (sumaFila != sumaDiagonal1 || sumaColumna != sumaDiagonal1) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+void imprimirMatriz(int** matriz,int n){
+    for(int x=0;x<n;x++){
+        for(int z=0; z<n;z++){
+            cout << *(*(matriz+z)+x)<<" ";
+        }
+        cout<<endl;
+    }
 }

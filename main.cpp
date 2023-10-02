@@ -24,10 +24,10 @@ int main()
         problema8();
         break;
     case 10:
-//        problema10();
+        problema10();
         break;
     case 12:
-//        problema12();
+        problema12();
         break;
     case 14:
 //        problema14();
@@ -35,7 +35,9 @@ int main()
     case 16:
 //        problema16();
         break;
-
+    case 18:
+//        problema18();
+        break;
     default:
         break;
     }
