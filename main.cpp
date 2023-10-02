@@ -13,12 +13,15 @@ int main()
     switch (opcion) {
     case 2:
         problema2();
+        break;
     case 4:
         problema4();
+        break;
     case 6:
         problema6();
+        break;
     case 8:
-//        problema8();
+        problema8();
         break;
     case 10:
 //        problema10();

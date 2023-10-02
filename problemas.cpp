@@ -89,3 +89,24 @@ void problema6(){
     cout << "En mayuscula: " << cadena << endl;
 
 }
+
+void problema8(){
+    string cadena;
+    cout << "Ingrese una cadena de caracteres: ";
+    cin >> cadena;
+
+    string texto = "";
+    string numero = "";
+
+    for (int i = 0; i < cadena.length(); ++i) {
+        if (isdigit(cadena[i])) {
+            numero += cadena[i];
+        } else {
+            texto += cadena[i];
+        }
+    }
+
+    cout << "Original: " << cadena << endl;
+    cout << "Texto: " << texto << endl;
+    cout << "Numero: " << numero << endl;
+}
