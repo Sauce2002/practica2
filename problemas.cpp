@@ -312,7 +312,7 @@ void calcularCaminos(int fila,int columna,int n,int *total) {
 void problema16(){
     int n;
     int total=0;
-    cout<<"ingrese el tamanio de la matriz cuadrada: "<<endl;
+    cout<<"ingrese el tamanio de la malla nxn: "<<endl;
     cin>>n;
     calcularCaminos(0,0,n+1,&total);
     cout<<"el total de caminos es: "<<total<<endl;
