@@ -356,7 +356,7 @@ void problema18(){
     if (n < 1)cout<<"valor incorrecto, debe ser mayor que 1"<<endl;
     else {
         string permutacion = enesimaPermutacion(pDigitos,n);
-        cout << "La permutación numero " << n << " es: " << permutacion << endl;
+        cout << "La permutacion numero " << n << " es: " << permutacion << endl;
     }
 
 }
