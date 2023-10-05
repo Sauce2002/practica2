@@ -36,7 +36,7 @@ int main()
         problema16();
         break;
     case 18:
-//        problema18();
+        problema18();
         break;
     default:
         break;

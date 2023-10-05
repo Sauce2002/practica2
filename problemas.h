@@ -9,4 +9,5 @@ void problema10();
 void problema12();
 void problema14();
 void problema16();
+void problema18();
 #endif // PROBLEMAS_H
